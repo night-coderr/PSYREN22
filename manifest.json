@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "PSYREN",
+  "description": "AI browser companion for summaries, translation, screenshots, memory, chat, and safe browser automation.",
+  "version": "1.0.0",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "scripting",
+    "sidePanel",
+    "tabCapture"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "src/background.js" },
+  "action": { "default_popup": "src/popup/popup.html", "default_title": "Open PSYREN" },
+  "side_panel": { "default_path": "src/panel/panel.html" },
+  "options_page": "src/options/options.html",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "commands": {
+    "open-psyren": {
+      "suggested_key": { "default": "Alt+P" },
+      "description": "Open PSYREN side panel"
+    }
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["src/content.js"],
+    "run_at": "document_idle"
+  }]
+}

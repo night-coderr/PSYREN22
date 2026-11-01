@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PSYREN</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <div class="psy-bg"></div>
+  <header class="topbar">
+    <button class="brand" id="brand" aria-label="PSYREN home">
+      <img src="../../assets/icon.svg" alt="">
+      <span>PSYREN</span>
+      <small>AI</small>
+    </button>
+    <div class="header-actions">
+      <button class="icon-btn" id="newChat" title="New chat">＋</button>
+      <button class="icon-btn" id="openSettings" title="Settings">⚙</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="screen active">
+      <div class="hero">
+        <div class="orb"><span></span></div>
+        <p class="eyebrow">PSYREN ONLINE</p>
+        <h1>What will we explore?</h1>
+        <p class="sub">Ask about this page, capture a thought, or let PSYREN act with your approval.</p>
+      </div>
+      <div class="actions-grid">
+        <button data-action="summary"><span class="action-icon">≡</span><strong>Summarize</strong><small>This page</small></button>
+        <button data-action="youtube"><span class="action-icon">▶</span><strong>YouTube</strong><small>Video summary</small></button>
+        <button data-action="translate"><span class="action-icon">文</span><strong>Translate</strong><small>English → Hinglish</small></button>
+        <button data-action="screenshot"><span class="action-icon">⌗</span><strong>See screen</strong><small>Screenshot AI</small></button>
+      </div>
+      <div class="quick-card">
+        <div>
+          <span class="status-dot"></span>
+          <strong>Page context</strong>
+        </div>
+        <button id="refreshPage">Refresh</button>
+        <p id="pageStatus">Reading current page…</p>
+      </div>
+    </section>
+
+    <section id="chat" class="screen">
+      <div class="chat-head">
+        <button class="back" id="backHome">←</button>
+        <div><strong id="chatTitle">PSYREN Chat</strong><small><span></span> Ready</small></div>
+      </div>
+      <div id="messages" class="messages"></div>
+      <div id="confirmBox" class="confirm-box hidden">
+        <p id="confirmText"></p>
+        <div><button id="denyAction">Not now</button><button class="primary" id="approveAction">Allow action</button></div>
+      </div>
+      <div class="composer-wrap">
+        <div id="attachment" class="attachment hidden"></div>
+        <div class="composer">
+          <button class="attach" id="attachScreen" title="Analyze screenshot">⌗</button>
+          <textarea id="prompt" rows="1" placeholder="Ask PSYREN…"></textarea>
+          <button id="send" class="send">➤</button>
+        </div>
+        <small class="hint">Enter to send · Alt+P to open</small>
+      </div>
+    </section>
+  </main>
+  <div id="toast" class="toast"></div>
+  <script src="panel.js"></script>
+</body>
+</html>

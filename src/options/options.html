@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>PSYREN Settings</title><link rel="stylesheet" href="options.css"></head>
+<body>
+  <main>
+    <section class="hero"><img src="../../assets/icon.svg" alt=""><div><p>CONTROL CENTER</p><h1>PSYREN Settings</h1></div></section>
+    <section class="card">
+      <label for="apiKey">Gemini API key</label>
+      <p>Get a free personal key from Google AI Studio. PSYREN stores it only in this browser profile.</p>
+      <div class="keyrow"><input id="apiKey" type="password" placeholder="AIza…"><button id="toggleKey">Show</button></div>
+      <a href="https://aistudio.google.com/app/apikey" target="_blank">Open Google AI Studio →</a>
+    </section>
+    <section class="card">
+      <label for="model">AI model</label>
+      <p>Gemini 3.8 Flash is the recommended fast model for personal/free usage.</p>
+      <select id="model"><option value="gemini-3.8-flash">Gemini 3.8 Flash</option></select>
+    </section>
+    <section class="card memory-card">
+      <div><label>Saved memory</label><span id="memoryCount">0 items</span></div>
+      <div id="memoryList"></div>
+      <button id="clearMemory" class="danger">Clear all memory</button>
+    </section>
+    <button id="save" class="save">Save settings</button>
+    <span id="saved">Saved</span>
+  </main>
+  <script src="options.js"></script>
+</body></html>
